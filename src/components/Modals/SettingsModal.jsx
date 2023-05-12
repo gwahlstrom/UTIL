@@ -12,15 +12,7 @@ function SettingsModal({ setShowModal }) {
   return ReactDom.createPortal(
     <div className={styles.containerModal} ref={modalRef} onClick={closeModal}>
       <div className={styles.settingsModal}>
-        <h2>About us</h2>
-        <h4>This app was made by:</h4>
-        <div className={styles.settingsModalText}>
-          <h5>Gustav Wahlström</h5>
-          <a href="https://github.com/gwahlstrom" target="_blank">
-            https://github.com/gwahlstrom
-          </a>
-        </div>
-
+        <h2>Settings</h2>
         <button onClick={() => setShowModal(false)}>
           <img src="/images/x.svg" alt="close button icon" />
         </button>

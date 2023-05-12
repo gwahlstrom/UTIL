@@ -5,3 +5,10 @@ $backgroundcolor: linear-gradient(90deg, #efd5ff 0%, #7c82d1 100%);
   width: 100vw;
   height: 100vh;
 }
+
+.weatherContainer {
+  position: absolute;
+  background-color: white;
+  width: 350px;
+  height: 150px;
+}
