@@ -1,12 +1,14 @@
-import { useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import styles from "./navbar.module.scss";
 import SettingsModal from "./Modals/SettingsModal";
+import { myContext } from "./Context";
 
 function Navbar(props) {
   const [navActive, setNavActive] = useState(true);
   const [hoverText, setHoverText] = useState("");
   const [hoverActive, setHoverActive] = useState(false);
   const [showModalSettings, setShowModalSettings] = useState(false);
+  const { weatherActive, setWeatherActive, setTimerActive, timerActive} = useContext(myContext)
 
   const openModalSettings = () => {
     setShowModalSettings(true);
@@ -24,6 +26,13 @@ function Navbar(props) {
     setHoverActive(false);
     setHoverText("");
   };
+  const weatherClickHandler = () => {
+    setWeatherActive(!weatherActive);
+  }
+  const timerClickHandle = () => {
+    setTimerActive(!timerActive);
+  }
+
 
   return (
     <>
@@ -71,9 +80,10 @@ function Navbar(props) {
                 name="Weather"
                 onMouseOver={(e) => mouseOver(e.target.name)}
                 onMouseLeave={(e) => mouseLeave(e.target.name)}
+                onClick={weatherClickHandler}
               />
             </li>
-            {hoverActive && hoverText === "Stopwatch" ? (
+            {hoverActive && hoverText === "Timer" ? (
               <p className={styles.hooverBox}>{hoverText}</p>
             ) : (
               <></>
@@ -81,10 +91,11 @@ function Navbar(props) {
             <li>
               <img
                 src="/images/stopwatch-fill.svg"
-                alt="add stopwatch icon"
-                name="Stopwatch"
+                alt="add timer icon"
+                name="Timer"
                 onMouseOver={(e) => mouseOver(e.target.name)}
                 onMouseLeave={(e) => mouseLeave(e.target.name)}
+                onClick={timerClickHandle}
               />
             </li>
             {hoverActive && hoverText === "Tasklist" ? (
