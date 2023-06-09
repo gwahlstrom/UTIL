@@ -1,3 +1,5 @@
+
+
 .containerModal {
   display: block;
   position: fixed;
@@ -19,10 +21,29 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
     border-radius: 5px;
     position: relative;
     animation: animate 0.3s;
+    .innerSettings0 {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+    }
+    .innerSettingsCS {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+    .innerSettingsCSO {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      padding-left: 30px;
+      padding-right: 30px;
+    }
     & a:hover {
       color: #2a5081b4;
     }
@@ -34,7 +55,7 @@
       top: 7px;
       right: 7px;
       padding: 8px 11px;
-      background: rgb(226, 226, 226);
+      background-color: rgb(208, 202, 231);
       color: rgb(15, 15, 15);
       font-weight: bold;
       border: none;
@@ -48,12 +69,6 @@
       align-content: center;
     }
   }
-}
-
-.settingsModalText {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 @keyframes animate {
